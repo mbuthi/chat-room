@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block head %}
+<title>Hireme | profile</title>
+{% endblock %}
+{% block content %}
+{% include "header.html" %}
+<section class="profile-section ">
+<div class="container heading color1">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 center">
+            <img class="profile" src="{{url_for('static', filename='images/profile-user.png')}}" alt="">
+        </div>
+        <div class="col-lg-6 col-md-6 center">
+            <h1 class="customH1 customColor">{{current_user.f_name}} {{current_user.l_name}}</h1>
+        </div>
+    </div>
+</div>
+</section>
+<section class="profile-section">
+<div class="container">
+    <h2 class="customH2 color3">Jobs you have applied</h2>
+    <div class="row">
+        {% for job in jobs %}
+        <div class="col-lg-3 col-md-6">
+            
+            <div class="card">
+                <div class="card-header">
+                    {{job.applied.category}}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{job.applied.title}}</h5>
+                    <p class="card-text">{{job.applied.description}}</p>                    
+                </div>
+                <div class="card-footer">
+                    posted by {{job.applied.hiring_manager.f_name}} {{job.applied.hiring_manager.l_name}}
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+<section class="profile-section">
+<div class="container">
+    <h2 class="customH2 color3">Jobs you have posted!</h2>
+    <div class="row">
+        {% for job in posted %}
+        <div class="col-lg-3 col-md-6">            
+            <div class="card">
+                <div class="card-header">
+                    {{job.category}}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{job.title}}</h5>
+                    <p class="card-text">{{job.description}}</p>                    
+                </div>
+                
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+{% endblock %}

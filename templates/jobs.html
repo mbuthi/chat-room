@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "flashes.html" %}
+<h1 class="color3">Jobs</h1>
+<div class="container-fluid">
+    <div class="row">
+        
+        <div class="col-lg-4 .col-md-4">
+            {% for job in jobs %}
+            <div class="card">
+                <div class="card-header">
+                    {{job.category}}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{job.title}}</h5>
+                    <p class="card-text">{{job.description}}</p>
+                    <a href="{{url_for('apply_job', job=job.public_id)}}" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

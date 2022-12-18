@@ -1,0 +1,17 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html"%}
+{% block head %}
+<title>Login</title>
+{% endblock %}
+{% block content %}
+{% include "header.html" %}
+{% include "flashes.html" %}
+<h1 class="color3">Login</h1>
+<div class="container-fluid">
+    
+    <div class="customForm">
+
+        {{render_form(form)}}
+    </div>
+</div>
+{% endblock %}

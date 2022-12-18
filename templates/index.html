@@ -1,0 +1,140 @@
+{% extends "base.html" %} {% block head %}
+<title>Home</title>
+{% block styles %}
+<style>
+    .jobSeekers {
+        height: 100vh;        
+        background-image: url("{{ url_for('static', filename='images/work-section-3.jpg') }}");
+        background-size:cover ;
+        border-radius: 10px;
+        background-color: rgb(0, 0, 0, .6);
+        background-blend-mode: multiply;
+        padding: 50px;
+        position: relative;
+    }
+</style>
+{% endblock %}
+{% endblock %} {% block content %} {% include "header.html" %}
+{% include "flashes.html"%}
+<section class="section section-1">
+    <div class="container-fluid">
+        <div class="row header customColor color1">
+            
+                <div  class="col-md-6 col-lg-6 ">                    
+                    <h1 class="alignTextLeft">Find your right job</h1>
+                    <h1 class="alignTextLeft">Get Hired, Get to Work</h1>
+                    <p class="alignTextLeft">Work with top gurus in your field, Work with your dream company</p>
+                    <a class="anchorTag colorBlack" href="{{url_for('jobs')}}">Get Started</a>
+                </div>
+                <div  class="col-md-6 col-lg-6">
+                    
+                    <img class="header-image" src="{{url_for('static', filename='images/header-image.jpg')}}" alt="">
+            
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="section-2">
+    <div class="container-fluid">
+        <h2>Look for jobs by category</h2>
+        <div class="row header color2">
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <div class="customCategory homeCategory">
+                    <h3>Accounting</h3>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="customCategory homeCategory">
+                    <h3>Programming</h3>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="customCategory homeCategory">
+                    <h3>Engineering</h3>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="customCategory homeCategory">
+                    <h3>Design</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-3">
+    <div class="container-fluid">
+        <div class="jobSeekers">
+            <div class="section-3-text">
+                <div class="text text-1">
+                    <h2>
+                        Find Your dream job
+                    </h2>
+                </div>
+                <div class="text text-2">
+                    <p>Have ever dreamed of getting a job at 
+                        dream company? Do you ever dream of taking your career
+                        to the next step in terms of how finances. Then Hireme gives 
+                        you the following steps which you can follow so as to land a 
+                        job in your dream comapany.
+                    </p>
+                </div>
+            </div>
+            <div class="row section-3-row">
+                <div class="col-lg-3">
+                    <div class="section-3-tips customCategory">
+                        <img src="{{url_for('static', filename='images/target.png')}}" alt="">
+                        <p>Know your skill</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="section-3-tips customCategory">
+                        <img src="{{url_for('static', filename='images/practice.png')}}" alt="">
+                        <p>Practice your skill</p>                        
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="section-3-tips customCategory">
+                        <img src="{{url_for('static', filename='images/cv.png')}}" alt="">
+                        <p>Generate a good resume</p>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-4 ">
+    <div class="container-fluid color1 header footer customColor">
+        <h2>Explore Hireme</h2>
+        <hr>
+        <div class="row">
+            <div class="col-lg-6 footer-content">
+                <div class="footer-1">
+                    <h3>
+                        For Job seekers
+                    </h3>
+                    <p>Apply</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="footer-1">
+                    <h3>
+                        For Company
+                    </h3>
+                    <p>About us</p>
+                    <p>Contact us</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="cta">
+            <span>Follow us</span>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+                        
+        </div>
+    </div>
+   
+</section>
+{% endblock %}
