@@ -1,2 +1,3 @@
-# chat-room
-This is chat room web application which is designed fr users to create groups and join groups
+# Upwork clone
+This is a upwork clone web application where users can apply for jobs, create job and see their job matches
+
